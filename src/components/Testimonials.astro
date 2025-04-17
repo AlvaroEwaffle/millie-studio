@@ -1,0 +1,56 @@
+---
+const testimonials = [
+  {
+    text: "Excelente servicio y atención. Me encantó la experiencia en Millie Studio.",
+    author: "María",
+    image: "/images/Maria.jpeg",
+    rating: 5
+  },
+  {
+    text: "Profesionales muy capacitadas y un ambiente acogedor. ¡Volveré pronto!",
+    author: "Jennifer",
+    image: "/images/Jennifer.jpeg",
+    rating: 5
+  },
+  {
+    text: "La mejor manicure que he tenido. Muy recomendado.",
+    author: "Thalia",
+    image: "/images/Thalia.jpeg",
+    rating: 5
+  },
+];
+
+const renderStars = (rating: number) => {
+  return "⭐".repeat(rating);
+};
+---
+
+<section class="py-24 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <h2 class="text-4xl md:text-5xl font-bold text-center text-gray-900 mb-16">
+      Lo que dicen nuestras clientas
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      {testimonials.map((testimonial) => (
+        <div class="bg-white rounded-2xl p-8 shadow-lg relative">
+          <div class="text-pink-600 text-4xl absolute -top-5 left-8">"</div>
+          <div class="mb-4 text-yellow-400">{renderStars(testimonial.rating)}</div>
+          <p class="text-gray-700 text-lg mb-6 italic">"{testimonial.text}"</p>
+          <div class="flex items-center">
+            <div class="w-12 h-12 rounded-full overflow-hidden">
+              <img 
+                src={testimonial.image} 
+                alt={`Foto de ${testimonial.author}`} 
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="ml-4">
+              <p class="font-semibold text-gray-900">{testimonial.author}</p>
+              <p class="text-gray-500 text-sm">Cliente verificada</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section> 

@@ -1,0 +1,46 @@
+---
+const services = [
+  {
+    name: "Manicure y Pedicure",
+    icon: "💅",
+    description: "Cuida y embellece tus manos y pies con nuestros tratamientos profesionales"
+  },
+  {
+    name: "Lifting de pestañas",
+    icon: "👁️",
+    description: "Realza tu mirada natural con nuestro lifting de pestañas"
+  },
+  {
+    name: "Perfilado de cejas",
+    icon: "✏️",
+    description: "Define y da forma a tus cejas para enmarcar tu rostro perfectamente"
+  },
+  {
+    name: "Depilación con cera",
+    icon: "🧴",
+    description: "Tratamientos de depilación suaves y efectivos"
+  },
+  {
+    name: "Limpiezas faciales",
+    icon: "🧼",
+    description: "Rejuvenece y purifica tu piel con nuestras limpiezas especializadas"
+  },
+];
+---
+
+<section class="py-20 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <h2 class="text-4xl md:text-5xl font-bold text-center text-gray-900 mb-16">
+      Nuestros Servicios
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {services.map((service) => (
+        <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+          <div class="text-5xl mb-6 flex justify-center">{service.icon}</div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">{service.name}</h3>
+          <p class="text-gray-600 text-center">{service.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section> 
